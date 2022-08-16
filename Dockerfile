@@ -1,10 +1,10 @@
-FROM alpine:3.6
+FROM alpine:3.16.2
 
 VOLUME /root/.aws
 VOLUME /project
 WORKDIR /project
 
-RUN apk --no-cache --update add openssl curl groff less mailcap
+RUN apk --no-cache -v --update add openssl curl groff less mailcap
 
 RUN curl -sL -o awscliv2.zip https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip \
     && unzip awscliv2.zip \
